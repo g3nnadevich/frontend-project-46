@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/g3nnadevich/frontend-project-46/issues"
   },
-  "homepage": "https://github.com/g3nnadevich/frontend-project-46#readme"
+  "homepage": "https://github.com/g3nnadevich/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
 }
