@@ -1,2 +1,4 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/g3nnadevich/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/g3nnadevich/frontend-project-46/actions)
+
+[![CI](https://github.com/g3nnadevich/frontend-project-46/actions/workflows/CI.yml/badge.svg)](https://github.com/g3nnadevich/frontend-project-46/actions/workflows/CI.yml)
