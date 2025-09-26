@@ -23,3 +23,11 @@ jobs:
 
       - name: Run linter
         run: make lint
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          organization: g3nnadevich
+          projectKey: g3nnadevich_frontend-project-46
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
