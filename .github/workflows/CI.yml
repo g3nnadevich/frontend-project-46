@@ -31,5 +31,6 @@ jobs:
             -Dsonar.projectKey=g3nnadevich_frontend-project-46
             -Dsonar.organization=g3nnadevich
             -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.sources=src
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
