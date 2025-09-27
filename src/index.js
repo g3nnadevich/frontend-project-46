@@ -1,5 +1,5 @@
-import parse from './parse';
-import compareFiles from './compareFiles';
+import parse from './parse.js';
+import compareFiles from './compareFiles.js';
 
 const genDiff = (data1, data2) => {
   const parseData1 = parse(data1);
