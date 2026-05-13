@@ -5,7 +5,7 @@ publish:
 	npm publish --dry-run
 
 run:
-	node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json
+	node bin/gendiff __fixtures__/file_1.json __fixtures__/file_2.json
 
 test:
 	npm test

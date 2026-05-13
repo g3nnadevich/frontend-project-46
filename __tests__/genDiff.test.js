@@ -10,8 +10,8 @@ const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', fi
 const readFile = filename => readFileSync(getFixturePath(filename), 'utf-8')
 
 test('gendiff flat json', () => {
-  const file1 = getFixturePath('file1.json')
-  const file2 = getFixturePath('file2.json')
+  const file1 = getFixturePath('file_1.json')
+  const file2 = getFixturePath('file_2.json')
   const expected = readFile('expected_flat.txt').trim()
 
   const result = genDiff(file1, file2)
