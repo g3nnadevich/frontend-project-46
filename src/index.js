@@ -1,12 +1,11 @@
-import parse from './parse'
-import compareFiles from './compareFiles'
+import parse from './parse.js';
+import compareFiles from './compareFiles.js';
 
-const genDiff = (data1, data2) => {
-  const parseData1 = parse(data1)
-  const parseData2 = parse(data2)
+const genDiff = (filepath1, filepath2) => {
+  const parsePath1 = parse(filepath1);
+  const parsePath2 = parse(filepath2);
 
-  const result = compareFiles(parseData1, parseData2)
-  return result
-}
+  return compareFiles(parsePath1, parsePath1);
+};
 
-export default genDiff
+export default genDiff;
