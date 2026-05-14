@@ -10,7 +10,7 @@ const compareFiles = (file1, file2) => {
       if (file1[key] === file2[key]) {
         return `${key}: ${file1[key]}`
       }
-      return [`- ${key}: ${file1[key]}`, `+ ${key}: ${file2[key]}`]
+      return [`- ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`]
     }
     if (_.has(file1, key)) {
       return `- ${key}: ${file1[key]}`
