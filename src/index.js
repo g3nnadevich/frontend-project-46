@@ -11,6 +11,6 @@ const parseFile = (filepath) => {
   return parse(extension, data)
 }
 
-export default (filepath1, filepath2) => {
-  return compareFiles(parseFile(filepath1), parseFile(filepath2))
+export default (filePath1, filePath2) => {
+  return compareFiles(parseFile(filePath1), parseFile(filePath2))
 }
