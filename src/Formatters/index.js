@@ -4,4 +4,4 @@ const formatter = {
     stylish: stylishFormatter,
 }
 
-export default (format, three) => formatter[format](three)
+export default (three, format) => formatter[format](three)
