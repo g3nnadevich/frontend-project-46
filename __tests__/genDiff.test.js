@@ -16,7 +16,11 @@ const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', fi
 const readFile = filename => readFileSync(getFixturePath(filename), 'utf-8')
 
 test.each(files)('gendiff flat %s', (_, filename1, filename2) => {
+  const fixture1Path = getFixturePath(filename1)
+  const fixture2Path = getFixturePath(filename2)
+
   const expected = readFile('expected_flat.txt').trim()
-  const result = genDiff(getFixturePath(filename1), getFixturePath(filename2))
+  const result = genDiff(fixture1Path, fixture2Path, "stylish")
+
   expect(result).toBe(expected)
 })
