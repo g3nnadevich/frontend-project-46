@@ -6,25 +6,25 @@ const SIGN_OFFSET = 2
 const getDiffIndent = (depth) =>
   ' '.repeat(depth * INDENT_SIZE - SIGN_OFFSET)
 
-const baseIndent = (depth) =>
+const getBaseIndent = (depth) =>
   ' '.repeat(depth * INDENT_SIZE)
 
-const closeIndent = (depth) =>
+const getCloseIndent = (depth) =>
   ' '.repeat(depth * INDENT_SIZE - INDENT_SIZE)
 
-const formatString = (string, depth) => ["{", ...string, `${closeIndent(depth)}}`].join("\n")
+const formatString = (string, depth) => ["{", ...string, `${getCloseIndent(depth)}}`].join("\n")
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) {
     return String(value)
   }
   const lines = Object.entries(value).map(([key, value]) => {
-    return `${baseIndent(depth)}${key}: ${stringify(value, depth + 1)}`
+    return `${getBaseIndent(depth)}${key}: ${stringify(value, depth + 1)}`
   })
   return formatString(lines, depth)
 }
 
-const formatter = (three) => {
+const stylishFormatter = (three) => {
   const iter = (node, depth = 1) => {
     switch(node.type) {
       case 'root': {
@@ -52,4 +52,4 @@ const formatter = (three) => {
   return iter(three)
 }
 
-export default formatter
+export default stylishFormatter
