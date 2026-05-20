@@ -19,8 +19,12 @@ test.each(files)('gendiff flat %s', (_, filename1, filename2) => {
   const fixture1Path = getFixturePath(filename1)
   const fixture2Path = getFixturePath(filename2)
 
-  const expected = readFile('expected_flat.txt').trim()
-  const result = genDiff(fixture1Path, fixture2Path, "stylish")
+  const stylishExpected = readFile('expected_flat.txt').trim()
+  const plainExpected = readFile('expected_flat.txt').trim()
+  
+  const stylishResult = genDiff(fixture1Path, fixture2Path, "stylish")
+  const plainResult = genDiff(fixture1Path, fixture2Path, "plain")
 
-  expect(result).toBe(expected)
+  expect(stylishResult).toBe(stylishExpected)
+  expect(plainResult).toBe(plainExpected)
 })

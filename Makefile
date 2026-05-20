@@ -4,12 +4,20 @@ install:
 publish:
 	npm publish --dry-run
 
-run-json:
+demonstration-json-stylish:
 	node bin/gendiff __fixtures__/file_1.json __fixtures__/file_2.json
-run-yaml:
+demonstration-json-plain:
+	node bin/gendiff -f plain __fixtures__/file_1.json __fixtures__/file_2.json 
+
+demonstration-yaml-stylish:
 	node bin/gendiff __fixtures__/file_1.yaml __fixtures__/file_2.yaml
-run-yml:
-	node bin/gendiff __fixtures__/file_1.yml __fixtures__/file_2.yml
+demonstration-yaml-plain:
+	node bin/gendiff -f plain __fixtures__/file_1.yaml __fixtures__/file_2.yaml 
+
+demonstration-yml-stylish:
+	node bin/gendiff __fixtures__/file_1.yaml __fixtures__/file_2.yaml
+demonstration-yml-plain:
+	node bin/gendiff -f plain __fixtures__/file_1.yml __fixtures__/file_2.yml 
 
 test:
 	npm test
