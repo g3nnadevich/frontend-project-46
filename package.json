@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/g3nnadevich/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/g3nnadevich/frontend-project-46/actions)",
+  "description": "JavaScript CLI-утилита для сравнения двух структур данных и определения различий между ними.",
   "main": "src/index.js",
   "scripts": {
     "test": "npx jest"
