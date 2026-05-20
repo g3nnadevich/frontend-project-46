@@ -13,7 +13,7 @@ const parseFile = (filepath) => {
   return parse(extension, data)
 }
 
-export default (filePath1, filePath2, format) => {
+export default (filePath1, filePath2, format = 'stylish') => {
   const three = compareFiles(parseFile(filePath1), parseFile(filePath2))
   return formatter(three, format)
 }
