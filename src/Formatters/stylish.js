@@ -3,16 +3,16 @@ import _ from 'lodash'
 const INDENT_SIZE = 4
 const SIGN_OFFSET = 2
 
-const getDiffIndent = (depth) =>
+const getDiffIndent = depth =>
   ' '.repeat(depth * INDENT_SIZE - SIGN_OFFSET)
 
-const getBaseIndent = (depth) =>
+const getBaseIndent = depth =>
   ' '.repeat(depth * INDENT_SIZE)
 
-const getCloseIndent = (depth) =>
+const getCloseIndent = depth =>
   ' '.repeat(depth * INDENT_SIZE - INDENT_SIZE)
 
-const formatString = (string, depth) => ["{", ...string, `${getCloseIndent(depth)}}`].join("\n")
+const formatString = (string, depth) => ['{', ...string, `${getCloseIndent(depth)}}`].join('\n')
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) {
@@ -26,24 +26,24 @@ const stringify = (value, depth) => {
 
 const stylishFormatter = (three) => {
   const iter = (node, depth = 1) => {
-    switch(node.type) {
+    switch (node.type) {
       case 'root': {
         const result = node.children.flatMap(child => iter(child, depth))
         return formatString(result, depth)
       }
-      case "unchanged": {
+      case 'unchanged': {
         return `${getDiffIndent(depth)}  ${node.name}: ${stringify(node.value, depth + 1)}`
       }
-      case "changed": {
+      case 'changed': {
         return `${getDiffIndent(depth)}- ${node.name}: ${stringify(node.oldValue, depth + 1)}\n${getDiffIndent(depth)}+ ${node.name}: ${stringify(node.newValue, depth + 1)}`
       }
-      case "added": {
+      case 'added': {
         return `${getDiffIndent(depth)}+ ${node.name}: ${stringify(node.value, depth + 1)}`
       }
-      case "removed": {
+      case 'removed': {
         return `${getDiffIndent(depth)}- ${node.name}: ${stringify(node.value, depth + 1)}`
       }
-      case "nested": {
+      case 'nested': {
         const result = node.children.flatMap(child => iter(child, depth + 1))
         return `${getDiffIndent(depth)}  ${node.name}: ${formatString(result, depth + 1)}`
       }

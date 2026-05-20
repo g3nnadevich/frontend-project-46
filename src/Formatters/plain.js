@@ -15,25 +15,25 @@ const getValueToString = (value) => {
 const getPlainDiff = (tree) => {
   const iter = (node, path) => node.flatMap((child) => {
     const currentPath = [path, child.name].flat().join('.')
-    switch(child.type) {
-      case "added": {
-          return `Property '${currentPath}' was added with value: ${getValueToString(child.value)}`
+    switch (child.type) {
+      case 'added': {
+        return `Property '${currentPath}' was added with value: ${getValueToString(child.value)}`
       }
-      case "removed": {
-          return `Property '${currentPath}' was removed`
+      case 'removed': {
+        return `Property '${currentPath}' was removed`
       }
-      case "changed": {
-          return `Property '${currentPath}' was updated. From ${getValueToString(child.oldValue)} to ${getValueToString(child.newValue)}`
+      case 'changed': {
+        return `Property '${currentPath}' was updated. From ${getValueToString(child.oldValue)} to ${getValueToString(child.newValue)}`
       }
-      case "nested": {
-          return iter(child.children, currentPath)
+      case 'nested': {
+        return iter(child.children, currentPath)
       }
-      case "unchanged": {
-          return []
+      case 'unchanged': {
+        return []
       }
     }
   })
-  return iter(tree.children, []).join("\n")
+  return iter(tree.children, []).join('\n')
 }
 
 export default getPlainDiff

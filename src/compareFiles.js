@@ -6,28 +6,28 @@ const compareFiles = (file1, file2) => {
   const sortedKeys = _.sortBy(_.union(keys1, keys2))
 
   const result = sortedKeys.map((key) => {
-    if(!_.has(file1, key)) {
+    if (!_.has(file1, key)) {
       return {
         name: key,
         value: file2[key],
         type: 'added',
       }
     }
-    if(!_.has(file2, key)) {
+    if (!_.has(file2, key)) {
       return {
         name: key,
         value: file1[key],
         type: 'removed',
       }
     }
-    if(_.isPlainObject(file1[key]) && _.isPlainObject(file2[key])) {
+    if (_.isPlainObject(file1[key]) && _.isPlainObject(file2[key])) {
       return {
         name: key,
         children: compareFiles(file1[key], file2[key]),
         type: 'nested',
       }
     }
-    if(file1[key] !== file2[key]) {
+    if (file1[key] !== file2[key]) {
       return {
         name: key,
         oldValue: file1[key],
