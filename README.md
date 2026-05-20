@@ -14,15 +14,19 @@
 ## Установка приложения и запуск
 - Установите Node.js версии 16 и выше.
 - Клонирование и установка репозитория:
-    ```gh repo clone g3nnadevich/frontend-project-46
+    ```
+    gh repo clone g3nnadevich/frontend-project-46
     cd frontend-project-46
     npm install
-    npm link```
+    npm link
+    ```
 - Проверьте установку вывзовом справочной информации по утилите: gendiff -h
 ## Использование
-```gendiff [options] <filepath1> <filepath2>```
-
-```options:
+```
+gendiff [options] <filepath1> <filepath2>
+```
+```
+options:
   -V, --version        output the version number
   -f, --format [type]  output format
   -h, --help           display help for command
@@ -31,16 +35,17 @@
 
 ## Примеры использования
 - Stylish формат (по умолчанию):
-    ```gendiff filepath1.json filepath2.json```
+```gendiff filepath1.json filepath2.json```
 - Plain формат:
-    gendiff --format plain path/to/file.yaml another/path/file.yaml
+```gendiff --format plain path/to/file.yaml another/path/file.yaml```
 - JSON формат:
-    gendiff --format json filepath1.yml filepath2.yml
+```gendiff --format json filepath1.yml filepath2.yml```
 ## Примеры вывода
 Примеры основаны на результатах сравнения готовых файлов из директории fixtures.
 
 ### Stylish формат:
-```{
+```
+{
     common: {
       + follow: false
         setting1: Value 1
@@ -83,10 +88,11 @@
         }
         fee: 100500
     }
-}```
-
+}
+```
 ### Plain формат:
-```Property 'common.follow' was added with value: false
+```
+Property 'common.follow' was added with value: false
 Property 'common.setting2' was removed
 Property 'common.setting3' was updated. From true to null
 Property 'common.setting4' was added with value: 'blah blah'
@@ -96,4 +102,5 @@ Property 'common.setting6.ops' was added with value: 'vops'
 Property 'group1.baz' was updated. From 'bas' to 'bars'
 Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
-Property 'group3' was added with value: [complex value]```
+Property 'group3' was added with value: [complex value]
+```
