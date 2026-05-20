@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 const getValueToString = (value) => {
   switch (typeof value) {
     case 'object': {
