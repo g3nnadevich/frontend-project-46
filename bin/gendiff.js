@@ -16,7 +16,8 @@ program
     try {
       const { format } = program.opts()
       console.log(genDiff(filepath1, filepath2, format))
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error.message)
     }
   })

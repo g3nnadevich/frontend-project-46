@@ -11,5 +11,3 @@ export default (extension, data) => {
       console.log(`Incorrect file extension: ${extension}`)
   }
 }
-
-
