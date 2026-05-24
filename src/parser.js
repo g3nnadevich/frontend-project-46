@@ -8,6 +8,6 @@ export default (extension, data) => {
     case 'yml':
       return yaml.load(data)
     default:
-      console.log(`Incorrect file extension: ${extension}`)
+      throw new Error(`Incorrect file extension: ${extension}`)
   }
 }
